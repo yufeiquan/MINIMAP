@@ -1,0 +1,224 @@
+html {
+    width: 100%;
+    height: 100%;
+
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        #place-info-wrapper {
+            background-color: #4285F4;
+            position: absolute;
+            top: 0;
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(0);
+            width: 408px;
+
+            &:not(.is-active) {
+                .place-info-content-wrapper {
+                    display: none;
+                }
+
+                .place-info-visibility-toggle {
+                    display: none;
+                }
+            }
+
+            &.invisible {
+                transform: translateX(-408px);
+            }
+
+            .loading-view-wrapper {
+                align-items: center;
+                display: none;
+                height: 305px;
+                justify-content: center;
+                width: 408px;
+
+                &.visible {
+                    display: flex;
+                }
+
+                img {
+                    height: 50px;
+                    width: 50px;
+                }
+            }
+
+            .place-info-content-wrapper {
+                display: none;
+
+                &.visible {
+                    display: block;
+                }
+            }
+
+            #hero-header-wrapper {
+                width: 100%;
+                height: 200px;
+                overflow: hidden;
+
+                img {
+                    width: 408px;
+                    height: 305px;
+                    top: -53px;
+                    position: relative;
+                }
+
+            }
+
+            #place-basic-info-wrapper {
+                width: 100%;
+                height: 105px;
+
+                #place-basic-info {
+                    padding: 16px 24px 20px;
+
+                    .info-text {
+                        color: white;
+                        font-family: Roboto, Arial, sans-serif;
+                    }
+
+                    .place-basic-info-row {
+                        margin-top: 8px;
+                    }
+
+                    .place-name {
+                        font-size: 18px;
+                        margin-top: 0;
+                    }
+
+                    .place-review-score, .place-type {
+                        font-size: 13px;
+                        color: white;
+                    }
+
+                    .place-review-wrapper {
+                        align-items: center;
+                        display: flex;
+
+                        .place-review-score {
+                            display: inline;
+                            height: 13px;
+                        }
+
+                        .place-review-stars-wrapper {
+                            align-items: center;
+                            display: flex;
+                            padding-left: 6px;
+
+                            i {
+                                color: white;
+                            }
+                        }
+                    }
+
+                    .place-type {
+                        text-transform: capitalize;
+                    }
+                }
+            }
+
+            .place-info-action-bar-wrapper {
+                background: white;
+                border-bottom: 1px solid #E6E6E6;
+
+                .place-info-action-bar {
+                    align-items: flex-start;
+                    color: #4285F4;
+                    display: flex;
+                    justify-content: center;
+                    padding: 8px 20px;
+
+                    .place-info-button {
+                        align-items: center;
+                        display: flex;
+                        flex: 1;
+                        flex-direction: column;
+                        justify-content: center;
+                        padding: 4px;
+                        transition: opacity 0.3s ease-in-out;
+
+                        &:hover {
+                            cursor: pointer;
+                            opacity: 0.8;
+                        }
+
+                        .place-info-action-icon {
+                            margin-bottom: 6px;
+                        }
+
+                        .place-info-action-title {
+                            font-family: Roboto, Arial, sans-serif;
+                            font-size: 12px;
+                            font-weight: 500;
+                            text-align: center;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+
+            .place-info-details-wrapper {
+                background: white;
+
+                .place-info-details {
+                    padding: 24px;
+
+                    .place-info-details-row {
+                        display: flex;
+                        padding: 6px 0;
+
+                        .place-info-details-icon {
+                            color: #4285F4;
+                            margin-right: 24px;
+                        }
+
+                        .place-info-details-description {
+                            color: rgba(0, 0, 0, 0.87);
+                            font-family: Roboto, Arial, sans-serif;
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+
+            .place-info-visibility-toggle {
+                width: 23px;
+                height: 48px;
+                position: absolute;
+                right: -23px;
+                line-height: 48px;
+                text-align: center;
+                background-color: rgba(255,255,255,0.9);
+                border: none;
+                border-left: 1px solid #D4D4D4;
+                box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+                top: 8px;
+                outline: none;
+
+                .triangle-icon {
+                    @triangle-size: 7px;
+                    width: 0; 
+                    height: 0;
+                    border-top: @triangle-size solid transparent;
+                    border-bottom: @triangle-size solid transparent; 
+                    border-left: @triangle-size solid rgba(0, 0, 0, 0.7);
+                    position: relative;
+                    left: 2px;
+
+                    &.left {
+                        border-left: 0;
+                        border-right:@triangle-size solid rgba(0, 0, 0, 0.7); 
+                    }
+                }
+            }
+        }
+    }
+}

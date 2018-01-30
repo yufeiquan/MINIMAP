@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="map"></div>
+        <link rel=stylesheet type="text/css" href="/css/search_bar.css">
+        <link rel=stylesheet type="text/css" href="/css/nearby_search.css">
+        <script type="text/javascript" src="/js/underscore.js"></script>
+        <script type="text/javascript" src="/js/jquery-3.1.1.js"></script>
+        <script type="text/javascript" src="/js/search_bar.js"></script>
+        <script type="text/javascript" src="/js/nearby_search.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMHhUmJYxgR9e4ZZ_OHW18r7D4fJVDrfc&libraries=places"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <div id="place-info-wrapper">
+            <div class="loading-view-wrapper">
+                <img src="/assets/spinner.gif" />
+            </div>
+            <div class="place-info-content-wrapper">
+                <div id="hero-header-wrapper"><img></img></div>
+                <div id="place-basic-info-wrapper">
+                    <div id="place-basic-info">
+                        <div class="place-name info-text place-basic-info-row"></div>
+                        <div class="place-review-wrapper place-basic-info-row">
+                            <div class="place-review-score info-text"></div>
+                            <div class="place-review-stars-wrapper"></div>
+                        </div>
+                        <div class="place-type info-text place-basic-info-row"></div>
+                    </div>
+                </div>
+                <div class="place-info-action-bar-wrapper">
+                    <div class="place-info-action-bar">
+                        <div class="place-info-button">
+                            <i class="place-info-action-icon material-icons" style="font-size:24px">bookmark_border</i>
+                            <div class="place-info-action-title">save</div>
+                        </div>
+                        <div class="place-info-button">
+                            <i class="place-info-action-icon material-icons" style="font-size:24px">pin_drop</i>
+                            <div class="place-info-action-title">nearby</div>
+                        </div>
+                        <div class="place-info-button">
+                            <i class="place-info-action-icon material-icons" style="font-size:24px">phone_android</i>
+                            <div class="place-info-action-title">send to your phone</div>
+                        </div>
+                        <div class="place-info-button">
+                            <i class="place-info-action-icon material-icons" style="font-size:24px">share</i>
+                            <div class="place-info-action-title">share</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="place-info-details-wrapper">
+                    <div class="place-info-details"></div>
+                </div>
+            </div>
+
+            <button class="place-info-visibility-toggle">
+                <div class="triangle-icon left">
+            </button>
+        </div>
+    </body>
+</html>
